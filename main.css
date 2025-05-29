@@ -15,6 +15,11 @@
     font-family: 'Fira sans' ,  sans-serif ;
 }
 
+/* biar awalnya disembunyikan LISTnya */
+#list-title {
+    display: none;
+}
+
 body{
     display: flex;
     flex-direction: column;

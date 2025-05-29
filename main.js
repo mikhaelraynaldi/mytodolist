@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const list_el = document.querySelector("#tasks");
+    const list_title = document.querySelector("#list-title");
 
     
     form.addEventListener('submit' , (e) => 
@@ -14,6 +15,10 @@ window.addEventListener('load', () => {
             alert("Please fill out the task");
             return;
         } 
+        
+         // Tampilkan judul LIST setelah menambahkan task
+         list_title.style.display = "block";
+
         const task_el = document.createElement("div");
         task_el.classList.add("task");
 
@@ -79,6 +84,9 @@ window.addEventListener('load', () => {
          task_delete_el.addEventListener('click' , () => 
          {
              list_el.removeChild(task_el);
+             if (list_el.querySelectorAll(".task").length === 0) {
+                list_title.style.display = "none";
+            }
 
  
          })
